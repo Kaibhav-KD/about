@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UPFIN — Funding Futures Through Intelligence</title>
+  <meta name="description" content="UPFIN is a next-generation fintech platform leveraging AI to democratize financial access. Learn about our mission, team, and vision." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Particle Canvas -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- Floating Gradient Orbs -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="orb orb-4"></div>
+
+  <!-- ========== NAV ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-text">UP<span class="logo-accent">FIN</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#who-we-are" class="nav-mobile-link">About</a></li>
+        <li><a href="#mission" class="nav-mobile-link">Mission</a></li>
+        <li><a href="#how-it-works" class="nav-mobile-link">How It Works</a></li>
+        <li><a href="#team" class="nav-mobile-link">Team</a></li>
+        <li><a href="#contact" class="nav-mobile-link">Contact</a></li>
+        <li class="nav-cta-mobile"><a href="#mission" class="btn btn-primary" style="padding:10px 22px;font-size:.82rem;">Get Started →</a></li>
+      </ul>
+      <a href="#mission" class="nav-cta" id="navCta">Get Started →</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="nav-overlay" id="navOverlay"></div>
+
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <!-- Network Lines SVG -->
+    <svg class="network-svg" viewBox="0 0 1400 800" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="glow-line">
+          <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+          <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+      <g class="network-group" filter="url(#glow-line)">
+        <line class="net-line" x1="100" y1="200" x2="400" y2="350"/>
+        <line class="net-line" x1="400" y1="350" x2="700" y2="150"/>
+        <line class="net-line" x1="700" y1="150" x2="1100" y2="400"/>
+        <line class="net-line" x1="1100" y1="400" x2="1300" y2="200"/>
+        <line class="net-line" x1="200" y1="600" x2="500" y2="450"/>
+        <line class="net-line" x1="500" y1="450" x2="800" y2="600"/>
+        <line class="net-line" x1="800" y1="600" x2="1100" y2="400"/>
+        <line class="net-line" x1="400" y1="350" x2="500" y2="450"/>
+        <line class="net-line" x1="700" y1="150" x2="800" y2="600"/>
+        <circle class="net-node" cx="100" cy="200" r="5"/>
+        <circle class="net-node" cx="400" cy="350" r="5"/>
+        <circle class="net-node" cx="700" cy="150" r="5"/>
+        <circle class="net-node" cx="1100" cy="400" r="5"/>
+        <circle class="net-node" cx="1300" cy="200" r="5"/>
+        <circle class="net-node" cx="200" cy="600" r="5"/>
+        <circle class="net-node" cx="500" cy="450" r="5"/>
+        <circle class="net-node" cx="800" cy="600" r="5"/>
+      </g>
+    </svg>
+
+    <!-- Hero 2-Column Layout -->
+    <div class="hero-inner container">
+
+      <!-- Left: Content -->
+      <div class="hero-content">
+        <div class="hero-badge">🚀 Next-Gen Fintech Platform</div>
+        <h1 class="hero-headline">
+          <span class="reveal-word">Funding</span>
+          <span class="reveal-word">Futures</span><br/>
+          <span class="reveal-word">Through</span>
+          <span class="reveal-word accent-text">Intelligence.</span>
+        </h1>
+        <p class="hero-sub">UPFIN combines AI-driven credit intelligence with embedded finance infrastructure to unlock capital for the next billion users.</p>
+        <div class="hero-ctas">
+          <a href="#who-we-are" class="btn btn-primary">Discover UPFIN</a>
+          <a href="#how-it-works" class="btn btn-ghost">How It Works ↓</a>
+        </div>
+        <div class="hero-trust">
+          <span class="trust-item">🔒 RBI Regulated</span>
+          <span class="trust-item">⭐ 4.9/5 Rating</span>
+          <span class="trust-item">🏆 Unicorn 2025</span>
+        </div>
+      </div>
+
+      <!-- Right: Float Cards -->
+      <div class="hero-visual" id="floatCards">
+        <div class="float-card fc-1" data-depth="0.25">
+          <div class="card-chip"></div>
+          <div class="card-brand">UPFIN</div>
+          <div class="card-number">•••• •••• •••• 4291</div>
+          <div class="card-holder">A. SHARMA</div>
+        </div>
+        <div class="float-card fc-2" data-depth="0.15">
+          <div class="card-label">Portfolio Value</div>
+          <div class="card-value">₹24,58,000</div>
+          <div class="card-change up">↑ +12.4% this month</div>
+        </div>
+        <div class="float-card fc-3" data-depth="0.35">
+          <div class="card-label">AI Credit Score</div>
+          <div class="card-score">842</div>
+          <div class="score-bar"><div class="score-fill" style="width:84%"></div></div>
+          <div class="card-label" style="margin-top:6px;font-size:.65rem">Excellent — Top 8%</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Scroll Hint -->
+    <div class="scroll-hint">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ========== WHO WE ARE ========== -->
+  <section class="who-we-are section-pad" id="who-we-are">
+    <div class="container split-layout">
+      <div class="split-left reveal-left">
+        <div class="section-tag">Who We Are</div>
+        <h2 class="section-title">Redefining <span class="gradient-text">Financial Access</span> for a Digital World</h2>
+        <p class="section-body">UPFIN emerged from a simple truth: the traditional financial system leaves millions underserved. We built an AI-native platform that understands people, not just credit scores — delivering smarter, faster capital to students, professionals, and entrepreneurs.</p>
+        <p class="section-body">Headquartered at the intersection of deep tech and inclusive finance, UPFIN is rewriting the rules of lending through data intelligence, trust infrastructure, and seamless digital experiences.</p>
+        <div class="mini-stats">
+          <div><strong class="count-num" data-target="2.4">0</strong><span>M+ Users</span></div>
+          <div><strong class="count-num" data-target="98">0</strong><span>% Approval Rate</span></div>
+          <div><strong class="count-num" data-target="120">0</strong><span>+ Partners</span></div>
+        </div>
+      </div>
+      <div class="split-right reveal-right">
+        <div class="dashboard-mockup">
+          <div class="mockup-header">
+            <span class="mockup-dot red"></span>
+            <span class="mockup-dot yellow"></span>
+            <span class="mockup-dot green"></span>
+            <span class="mockup-title">UPFIN Dashboard</span>
+          </div>
+          <div class="mockup-body">
+            <div class="mockup-card">
+              <span class="mockup-label">Loan Disbursed</span>
+              <span class="mockup-val cyan">₹8,40,000</span>
+              <div class="mockup-bar"><div class="mockup-fill" style="width:72%"></div></div>
+            </div>
+            <div class="mockup-card">
+              <span class="mockup-label">AI Score</span>
+              <span class="mockup-val gold">874</span>
+              <div class="mockup-bar"><div class="mockup-fill gold-fill" style="width:87%"></div></div>
+            </div>
+            <div class="mockup-card">
+              <span class="mockup-label">Active Offers</span>
+              <span class="mockup-val green">12 Matched</span>
+              <div class="mockup-pills">
+                <span class="pill">SBI</span>
+                <span class="pill">HDFC</span>
+                <span class="pill">Axis</span>
+              </div>
+            </div>
+            <div class="mockup-chart">
+              <div class="chart-bar" style="height:40%"></div>
+              <div class="chart-bar" style="height:65%"></div>
+              <div class="chart-bar" style="height:45%"></div>
+              <div class="chart-bar" style="height:80%"></div>
+              <div class="chart-bar" style="height:60%"></div>
+              <div class="chart-bar" style="height:90%"></div>
+              <div class="chart-bar active" style="height:75%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SVG Wave Separator -->
+  <div class="wave-sep">
+    <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="rgba(0,229,255,0.05)"/>
+    </svg>
+  </div>
+
+  <!-- ========== MISSION ========== -->
+  <section class="mission section-pad" id="mission">
+    <div class="container">
+      <div class="section-header center reveal-up">
+        <div class="section-tag">Our Mission</div>
+        <h2 class="section-title">Built on <span class="gradient-text">Principles</span> That Matter</h2>
+        <p class="section-subtitle">Every line of our platform reflects our core commitments to our users.</p>
+      </div>
+      <div class="mission-cards">
+        <div class="mission-card reveal-up" data-delay="0">
+          <div class="mission-icon">🛡️</div>
+          <h3>Trust</h3>
+          <p>Bank-grade security, transparent algorithms, and user-first data governance — your trust is our infrastructure.</p>
+          <div class="card-glow-line"></div>
+        </div>
+        <div class="mission-card reveal-up" data-delay="100">
+          <div class="mission-icon">🔍</div>
+          <h3>Transparency</h3>
+          <p>No hidden fees, no black-box decisions. Every offer is explained. Every decision is auditable.</p>
+          <div class="card-glow-line"></div>
+        </div>
+        <div class="mission-card reveal-up" data-delay="200">
+          <div class="mission-icon">⚡</div>
+          <h3>Speed</h3>
+          <p>From application to disbursement in under 4 hours. AI processes what took banks weeks — instantly.</p>
+          <div class="card-glow-line"></div>
+        </div>
+        <div class="mission-card reveal-up" data-delay="300">
+          <div class="mission-icon">🌐</div>
+          <h3>Financial Access</h3>
+          <p>Reaching Tier-2, Tier-3 cities and beyond. Making credit accessible to every ambitious individual.</p>
+          <div class="card-glow-line"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STATS ========== -->
+  <section class="stats section-pad" id="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-block reveal-up" data-delay="0">
+          <div class="stat-glow"></div>
+          <div class="stat-number"><span class="count-num" data-target="2.4" data-decimals="1">0</span>M+</div>
+          <div class="stat-label">Users Served</div>
+        </div>
+        <div class="stat-block reveal-up" data-delay="100">
+          <div class="stat-glow"></div>
+          <div class="stat-number">₹<span class="count-num" data-target="4200" data-suffix="Cr">0</span>+</div>
+          <div class="stat-label">Capital Disbursed</div>
+        </div>
+        <div class="stat-block reveal-up" data-delay="200">
+          <div class="stat-glow"></div>
+          <div class="stat-number"><span class="count-num" data-target="98">0</span>%</div>
+          <div class="stat-label">Approval Rate</div>
+        </div>
+        <div class="stat-block reveal-up" data-delay="300">
+          <div class="stat-glow"></div>
+          <div class="stat-number"><span class="count-num" data-target="120">0</span>+</div>
+          <div class="stat-label">Banking Partners</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOW IT WORKS ========== -->
+  <section class="how-it-works section-pad" id="how-it-works">
+    <div class="container">
+      <div class="section-header center reveal-up">
+        <div class="section-tag">Process</div>
+        <h2 class="section-title">How <span class="gradient-text">UPFIN</span> Works</h2>
+        <p class="section-subtitle">Four seamless steps from application to funding.</p>
+      </div>
+      <div class="steps-wrapper">
+        <div class="steps-connector">
+          <div class="connector-line"></div>
+          <div class="connector-pulse"></div>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card reveal-up" data-delay="0">
+            <div class="step-num">01</div>
+            <div class="step-icon">🎯</div>
+            <h3>Check Eligibility</h3>
+            <p>AI evaluates your profile in seconds using 400+ data signals beyond just a CIBIL score.</p>
+          </div>
+          <div class="step-card reveal-up" data-delay="150">
+            <div class="step-num">02</div>
+            <div class="step-icon">📊</div>
+            <h3>Compare Offers</h3>
+            <p>Receive personalized loan offers from 120+ verified lenders, ranked by AI for best fit.</p>
+          </div>
+          <div class="step-card reveal-up" data-delay="300">
+            <div class="step-num">03</div>
+            <div class="step-icon">📱</div>
+            <h3>Apply Digitally</h3>
+            <p>100% paperless process. Upload documents, e-sign, and submit — all from your phone.</p>
+          </div>
+          <div class="step-card reveal-up" data-delay="450">
+            <div class="step-num">04</div>
+            <div class="step-icon">💰</div>
+            <h3>Get Funded</h3>
+            <p>Funds directly credited in under 4 hours. Real-time tracking dashboard included.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHY DIFFERENT (BENTO) ========== -->
+  <section class="why-different section-pad" id="why-different">
+    <div class="container">
+      <div class="section-header center reveal-up">
+        <div class="section-tag">Differentiation</div>
+        <h2 class="section-title">Why We're <span class="gradient-text">Different</span></h2>
+      </div>
+      <div class="bento-grid">
+        <div class="bento-card bento-large reveal-up" data-delay="0">
+          <div class="bento-icon">🤖</div>
+          <h3>AI-Powered Underwriting</h3>
+          <p>Our proprietary ML models assess 400+ alternative data points for hyper-accurate credit decisions in real-time.</p>
+          <div class="bento-visual">
+            <div class="ai-network">
+              <div class="ai-node" style="top:20%;left:10%">📡</div>
+              <div class="ai-node" style="top:50%;left:40%">🧠</div>
+              <div class="ai-node" style="top:20%;left:70%">📈</div>
+              <div class="ai-node" style="top:70%;left:60%">💳</div>
+              <div class="ai-node" style="top:70%;left:20%">📱</div>
+            </div>
+          </div>
+        </div>
+        <div class="bento-card reveal-up" data-delay="100">
+          <div class="bento-icon">🔐</div>
+          <h3>Zero-Touch KYC</h3>
+          <p>Aadhaar + PAN verified in under 30 seconds with liveness detection.</p>
+        </div>
+        <div class="bento-card reveal-up" data-delay="200">
+          <div class="bento-icon">🌍</div>
+          <h3>Pan-India Reach</h3>
+          <p>Serving 400+ cities including Tier-2 and Tier-3 markets with vernacular support.</p>
+        </div>
+        <div class="bento-card reveal-up" data-delay="300">
+          <div class="bento-icon">⚙️</div>
+          <h3>Embedded Finance API</h3>
+          <p>White-label lending infrastructure for edtech, jobtech, and neo-banking platforms.</p>
+        </div>
+        <div class="bento-card reveal-up" data-delay="400">
+          <div class="bento-icon">🎓</div>
+          <h3>Education Ecosystem</h3>
+          <p>Deep integrations with 300+ institutions. From admission to disbursement in one flow.</p>
+        </div>
+        <div class="bento-card bento-wide reveal-up" data-delay="500">
+          <div class="bento-icon">🔮</div>
+          <h3>Predictive Credit Scoring</h3>
+          <p>Our AI doesn't just read your past — it predicts your financial future using behavior analytics, course outcomes, and earning potential, giving first-time borrowers the credit they deserve.</p>
+          <div class="score-visual">
+            <div class="score-ring">
+              <span class="ring-num">874</span>
+              <div class="ring-label">UPFIN Score</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== JOURNEY TIMELINE ========== -->
+  <section class="journey section-pad" id="journey">
+    <div class="container">
+      <div class="section-header center reveal-up">
+        <div class="section-tag">Our Journey</div>
+        <h2 class="section-title">Milestones That <span class="gradient-text">Shaped Us</span></h2>
+      </div>
+      <div class="timeline-scroll">
+        <div class="timeline-track">
+          <div class="orbit-line"></div>
+          <div class="timeline-item tl-left reveal-up">
+            <div class="tl-dot"><div class="tl-inner"></div></div>
+            <div class="tl-content glass-card">
+              <div class="tl-year">2020</div>
+              <h4>Founded</h4>
+              <p>UPFIN incorporated with ₹2Cr seed from angel investors. Mission: democratize education finance.</p>
+            </div>
+          </div>
+          <div class="timeline-item tl-right reveal-up" data-delay="100">
+            <div class="tl-dot"><div class="tl-inner"></div></div>
+            <div class="tl-content glass-card">
+              <div class="tl-year">2021</div>
+              <h4>First 10,000 Users</h4>
+              <p>Launched beta with 3 NBFC partners. 98% satisfaction score. ₹50Cr disbursed.</p>
+            </div>
+          </div>
+          <div class="timeline-item tl-left reveal-up" data-delay="200">
+            <div class="tl-dot"><div class="tl-inner"></div></div>
+            <div class="tl-content glass-card">
+              <div class="tl-year">2022</div>
+              <h4>Series A — ₹75Cr</h4>
+              <p>Led by Sequoia India. Expanded to 50+ cities and launched AI underwriting engine v1.</p>
+            </div>
+          </div>
+          <div class="timeline-item tl-right reveal-up" data-delay="300">
+            <div class="tl-dot"><div class="tl-inner"></div></div>
+            <div class="tl-content glass-card">
+              <div class="tl-year">2023</div>
+              <h4>1 Million Users</h4>
+              <p>Crossed 1M users milestone. Launched Embedded Finance API for edtech partnerships.</p>
+            </div>
+          </div>
+          <div class="timeline-item tl-left reveal-up" data-delay="400">
+            <div class="tl-dot"><div class="tl-inner"></div></div>
+            <div class="tl-content glass-card">
+              <div class="tl-year">2024</div>
+              <h4>Series B — ₹300Cr</h4>
+              <p>Global expansion begins. UAE and Singapore offices opened. 120+ lender network.</p>
+            </div>
+          </div>
+          <div class="timeline-item tl-right reveal-up" data-delay="500">
+            <div class="tl-dot"><div class="tl-inner"></div></div>
+            <div class="tl-content glass-card">
+              <div class="tl-year">2025</div>
+              <h4>Unicorn Status 🦄</h4>
+              <p>Valuation crosses $1B. 2.4M users. ₹4200Cr disbursed. The future has arrived.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TEAM ========== -->
+  <section class="team section-pad" id="team">
+    <div class="container">
+      <div class="section-header center reveal-up">
+        <div class="section-tag">The Builders</div>
+        <h2 class="section-title">Meet the <span class="gradient-text">Founders</span></h2>
+      </div>
+      <div class="team-grid">
+        <div class="team-card glass-card reveal-up" data-delay="0">
+          <div class="team-avatar" style="background: linear-gradient(135deg,#00E5FF,#0AEFFF)">
+            <span>AS</span>
+          </div>
+          <h3 class="team-name">Arjun Sharma</h3>
+          <div class="team-role">CEO & Co-Founder</div>
+          <p class="team-bio">Ex-Goldman Sachs. IIT Delhi. 12 years in structured finance and AI product strategy.</p>
+          <div class="team-socials">
+            <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+            <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+          </div>
+        </div>
+        <div class="team-card glass-card reveal-up" data-delay="150">
+          <div class="team-avatar" style="background: linear-gradient(135deg,#00FFB2,#00E5FF)">
+            <span>PK</span>
+          </div>
+          <h3 class="team-name">Priya Krishnan</h3>
+          <div class="team-role">CTO & Co-Founder</div>
+          <p class="team-bio">Ex-Google AI. IISc Bangalore. Built India's first real-time credit ML pipeline.</p>
+          <div class="team-socials">
+            <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+            <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+          </div>
+        </div>
+        <div class="team-card glass-card reveal-up" data-delay="300">
+          <div class="team-avatar" style="background: linear-gradient(135deg,#D6C27A,#00E5FF)">
+            <span>RM</span>
+          </div>
+          <h3 class="team-name">Rohan Mehta</h3>
+          <div class="team-role">CFO & Co-Founder</div>
+          <p class="team-bio">Ex-Sequoia Capital India. INSEAD MBA. Structured 50+ fintech investment rounds.</p>
+          <div class="team-socials">
+            <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+            <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+          </div>
+        </div>
+        <div class="team-card glass-card reveal-up" data-delay="450">
+          <div class="team-avatar" style="background: linear-gradient(135deg,#0AEFFF,#D6C27A)">
+            <span>SN</span>
+          </div>
+          <h3 class="team-name">Sneha Nair</h3>
+          <div class="team-role">CPO & Co-Founder</div>
+          <p class="team-bio">Ex-Razorpay. IIM Ahmedabad. Designed product experiences used by 20M+ fintech users.</p>
+          <div class="team-socials">
+            <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+            <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="testimonials section-pad" id="testimonials">
+    <div class="container">
+      <div class="section-header center reveal-up">
+        <div class="section-tag">Social Proof</div>
+        <h2 class="section-title">Voices of the <span class="gradient-text">Funded</span></h2>
+      </div>
+    </div>
+    <div class="marquee-wrapper">
+      <div class="marquee-track" id="marqueeTrack">
+        <div class="testi-card glass-card">
+          <div class="testi-stars">★★★★★</div>
+          <p>"UPFIN approved my study abroad loan in 3 hours. Every other bank said no. This is the future."</p>
+          <div class="testi-author"><span class="testi-av">RA</span><div><strong>Rahul A.</strong><br/><small>MBA - London Business School</small></div></div>
+        </div>
+        <div class="testi-card glass-card">
+          <div class="testi-stars">★★★★★</div>
+          <p>"I'm from a Tier-3 city. No bank would look at me. UPFIN's AI saw potential banks couldn't."</p>
+          <div class="testi-author"><span class="testi-av" style="background:linear-gradient(135deg,#00FFB2,#0AEFFF)">KP</span><div><strong>Kavita P.</strong><br/><small>B.Tech - NIT Surat</small></div></div>
+        </div>
+        <div class="testi-card glass-card">
+          <div class="testi-stars">★★★★★</div>
+          <p>"The dashboard is gorgeous. I could track every step. Felt premium, not like a bank's website."</p>
+          <div class="testi-author"><span class="testi-av" style="background:linear-gradient(135deg,#D6C27A,#00E5FF)">DM</span><div><strong>Dev M.</strong><br/><small>MS - Carnegie Mellon</small></div></div>
+        </div>
+        <div class="testi-card glass-card">
+          <div class="testi-stars">★★★★★</div>
+          <p>"No physical documents, no waiting in queues, no hidden charges. UPFIN changed everything for me."</p>
+          <div class="testi-author"><span class="testi-av" style="background:linear-gradient(135deg,#0AEFFF,#00FFB2)">SR</span><div><strong>Sana R.</strong><br/><small>Medical - AIIMS Delhi</small></div></div>
+        </div>
+        <div class="testi-card glass-card">
+          <div class="testi-stars">★★★★★</div>
+          <p>"₹20 lakhs in my account in 4 hours. I called my mom crying. UPFIN made my dream real."</p>
+          <div class="testi-author"><span class="testi-av" style="background:linear-gradient(135deg,#00E5FF,#D6C27A)">AK</span><div><strong>Ankit K.</strong><br/><small>MBA - ISB Hyderabad</small></div></div>
+        </div>
+        <div class="testi-card glass-card">
+          <div class="testi-stars">★★★★★</div>
+          <p>"As an EdTech partner, UPFIN's API integration was seamless. Conversion rates up 40%."</p>
+          <div class="testi-author"><span class="testi-av" style="background:linear-gradient(135deg,#00FFB2,#D6C27A)">VB</span><div><strong>Vikram B.</strong><br/><small>VP Product - LearnPath</small></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FUTURE VISION ========== -->
+  <section class="vision section-pad" id="vision">
+    <div class="container">
+      <div class="section-header center reveal-up">
+        <div class="section-tag">The Horizon</div>
+        <h2 class="section-title">Our <span class="gradient-text">Future Vision</span></h2>
+        <p class="section-subtitle">Where intelligence meets capital at planetary scale.</p>
+      </div>
+      <div class="vision-cosmos">
+        <div class="cosmos-center">
+          <div class="cosmos-orb">
+            <span>UPFIN</span>
+            <div class="cosmos-ring ring-1"></div>
+            <div class="cosmos-ring ring-2"></div>
+            <div class="cosmos-ring ring-3"></div>
+          </div>
+        </div>
+        <div class="vision-items">
+          <div class="vision-item reveal-up" data-delay="0">
+            <div class="vision-icon">🧠</div>
+            <h4>Generative AI Lending</h4>
+            <p>LLM-powered financial advisors that negotiate loan terms on your behalf in real-time.</p>
+          </div>
+          <div class="vision-item reveal-up" data-delay="100">
+            <div class="vision-icon">🌍</div>
+            <h4>Global Expansion</h4>
+            <p>Serving 25 countries by 2027. Cross-border education finance for a borderless generation.</p>
+          </div>
+          <div class="vision-item reveal-up" data-delay="200">
+            <div class="vision-icon">📡</div>
+            <h4>Predictive Scoring</h4>
+            <p>AI that predicts earning potential from skill trajectories — not just credit history.</p>
+          </div>
+          <div class="vision-item reveal-up" data-delay="300">
+            <div class="vision-icon">🔗</div>
+            <h4>DeFi Integration</h4>
+            <p>On-chain credit rails combining blockchain trust with AI speed for unstoppable lending.</p>
+          </div>
+          <div class="vision-item reveal-up" data-delay="400">
+            <div class="vision-icon">🎓</div>
+            <h4>Education Ecosystem</h4>
+            <p>From admission → loan → placement → repayment — one seamless financial lifecycle platform.</p>
+          </div>
+          <div class="vision-item reveal-up" data-delay="500">
+            <div class="vision-icon">⚡</div>
+            <h4>Instant Credit Rails</h4>
+            <p>Sub-second credit decisions embedded into every checkout, app, and institution digitally.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="contact">
+    <div class="footer-glow"></div>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <span class="logo-icon">⬡</span>
+            <span class="logo-text">UP<span class="logo-accent">FIN</span></span>
+          </a>
+          <p>Funding Futures Through Intelligence.<br/>The AI-native fintech platform for the next billion.</p>
+          <div class="footer-socials">
+            <a href="#" class="fsoc" aria-label="LinkedIn">in</a>
+            <a href="#" class="fsoc" aria-label="Twitter">𝕏</a>
+            <a href="#" class="fsoc" aria-label="Instagram">◎</a>
+            <a href="#" class="fsoc" aria-label="GitHub">⌥</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="fl-col">
+            <h5>Company</h5>
+            <a href="#">About Us</a>
+            <a href="#">Careers</a>
+            <a href="#">Press</a>
+            <a href="#">Blog</a>
+          </div>
+          <div class="fl-col">
+            <h5>Products</h5>
+            <a href="#">Education Loans</a>
+            <a href="#">Personal Finance</a>
+            <a href="#">API Platform</a>
+            <a href="#">Partner Program</a>
+          </div>
+          <div class="fl-col">
+            <h5>Legal</h5>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Grievance</a>
+            <a href="#">NBFC License</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-line"></div>
+        <p>© 2025 UPFIN Technologies Pvt. Ltd. — RBI Registered NBFC-AA | CIN: U65929DL2020PTC123456</p>
+        <p class="footer-tiny">UPFIN is not a bank. Loans are subject to credit eligibility and lender approval.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
